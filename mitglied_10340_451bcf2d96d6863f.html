@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meine Praxisdaten – bng</title>
+<style>
+:root{--green:#2C6E49;--green-light:#D8EDDF;--green-mid:#4A9E72;--slate:#1E2A2A;--muted:#6B7A6B;--border:#D0DAD5;--bg:#F7FAF8;--white:#FFFFFF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--slate);font-size:15px;line-height:1.55;}
+header{background:var(--green);color:white;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;}
+.logo{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.logo span{font-weight:300;opacity:.7;}
+.hero{background:var(--white);border-bottom:1px solid var(--border);padding:28px 32px 24px;}
+.hero-inner{max-width:860px;margin:0 auto;}
+.hero h1{font-size:22px;font-weight:600;margin-bottom:6px;}
+.hero p{font-size:14px;color:var(--muted);max-width:580px;}
+.hero-meta{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;}
+.pill{background:#EBF5EF;border:1px solid #B8DEC6;color:var(--green);font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;}
+.changed-bar{display:none;background:#FFF8E1;border-bottom:2px solid #FFB300;padding:10px 32px;font-size:13px;color:#5D4037;text-align:center;position:sticky;top:60px;z-index:99;}
+.changed-bar.visible{display:block;}
+main{max-width:860px;margin:24px auto 60px;padding:0 16px;display:flex;flex-direction:column;gap:18px;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;}
+.card-header{padding:13px 20px;border-bottom:1px solid var(--border);}
+.card-header h2{font-size:13px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--green);}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;}
+.field-grid .field:not(.field-full):nth-child(odd){border-right:1px solid var(--border);}
+.field{padding:13px 20px;border-bottom:1px solid var(--border);}
+.field:last-child{border-bottom:none;}
+.field-full{grid-column:1/-1;border-right:none!important;}
+.field-label{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:5px;}
+.field input[type=text],.field textarea{width:100%;border:1px solid var(--border);border-radius:5px;padding:7px 10px;font-size:14px;font-family:inherit;color:var(--slate);outline:none;background:var(--bg);transition:border-color .15s;}
+.field input[type=text]:focus,.field textarea:focus{border-color:var(--green-mid);background:white;}
+.field textarea{min-height:80px;resize:vertical;}
+.check-grid{padding:14px 20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:6px;}
+.check-item{display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer;padding:5px 7px;border-radius:4px;transition:background .1s;}
+.check-item:hover{background:var(--green-light);}
+.check-item input[type=checkbox]{width:17px;height:17px;accent-color:var(--green);flex-shrink:0;cursor:pointer;}
+.check-label{user-select:none;}
+.wb-grid{display:grid;grid-template-columns:1fr 1fr;min-height:120px;}
+.wb-col{padding:14px 20px;display:flex;flex-direction:column;gap:6px;}
+.wb-col-right{border-left:1px solid var(--border);justify-content:space-between;}
+.submit-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:22px 24px;}
+.submit-card h2{font-size:15px;font-weight:600;margin-bottom:6px;}
+.submit-card p{font-size:13px;color:var(--muted);margin-bottom:16px;}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{padding:10px 22px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;border:none;transition:all .15s;}
+.btn-primary{background:var(--green);color:white;}
+.btn-primary:hover{background:#235839;}
+.btn-secondary{background:var(--white);color:var(--green);border:1px solid var(--green);}
+.btn-secondary:hover{background:var(--green-light);}
+.btn-secondary.hidden{display:none;}
+footer{text-align:center;font-size:12px;color:#9EA89E;padding:20px 0 32px;}
+@media(max-width:600px){
+  .field-grid,.wb-grid{grid-template-columns:1fr;}
+  .field-grid .field:not(.field-full){border-right:none;}
+  .wb-col-right{border-left:none;border-top:1px solid var(--border);}
+  header{padding:0 16px;}.hero{padding:20px 16px;}main{padding:0 10px;}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">bng <span>/ die Magen-Darm-Ärzte</span></div>
+  <div style="font-size:12px;opacity:.65;">Mitgliederportal · Datencheck</div>
+</header>
+<div class="hero">
+  <div class="hero-inner">
+    <h1>Guten Tag, PD Dr. med. Gerhard Heptner</h1>
+    <p>Dies sind Ihre aktuell beim bng gespeicherten Praxisdaten. Bitte prüfen und korrigieren Sie alle Angaben direkt auf dieser Seite. Am Ende senden Sie uns alles mit einem Klick.</p>
+    <div class="hero-meta">
+      <span class="pill">Mitglied Nr. 10340</span>
+      <span class="pill">Dresden</span>
+    </div>
+  </div>
+</div>
+<div class="changed-bar" id="changed-bar">⚠️ Sie haben Änderungen vorgenommen – denken Sie daran, am Ende auf „Änderungen senden“ zu klicken.</div>
+<main>
+  <div class="card"><div class="card-header"><h2>Persönliche Daten</h2></div>
+    <div class="field-grid"><div class="field"><div class="field-label">Anrede</div><input type="text" name="anrede" value="Herr" oninput="trackChange()"></div><div class="field"><div class="field-label">Akademischer Titel</div><input type="text" name="akademisch" value="PD Dr. med." oninput="trackChange()"></div><div class="field"><div class="field-label">Vorname</div><input type="text" name="vorname" value="Gerhard" oninput="trackChange()"></div><div class="field"><div class="field-label">Nachname</div><input type="text" name="nachname" value="Heptner" oninput="trackChange()"></div><div class="field"><div class="field-label">E-Mail</div><input type="text" name="email" value="gerhard.heptner@t-online.de" oninput="trackChange()"></div><div class="field"><div class="field-label">Webseite</div><input type="text" name="webseite" value="" oninput="trackChange()"></div></div></div>
+  <div class="card"><div class="card-header"><h2>Praxisadresse &amp; Kontakt</h2></div>
+    <div class="field-grid"><div class="field field-full"><div class="field-label">Straße</div><input type="text" name="strasse" value="Lukasstraße 3" oninput="trackChange()"></div><div class="field"><div class="field-label">PLZ</div><input type="text" name="plz" value="1069" oninput="trackChange()"></div><div class="field"><div class="field-label">Ort</div><input type="text" name="ort" value="Dresden" oninput="trackChange()"></div><div class="field"><div class="field-label">Telefon</div><input type="text" name="telefon" value="0351-436120" oninput="trackChange()"></div><div class="field"><div class="field-label">Telefax</div><input type="text" name="telefax" value="0351-4361220" oninput="trackChange()"></div></div></div>
+  <div class="card"><div class="card-header"><h2>Praxisinformationen</h2></div>
+    <div class="field-grid"><div class="field field-full"><div class="field-label">Behandlungsmethoden</div><textarea name="behandlungsmethoden" oninput="trackChange()"></textarea></div><div class="field field-full"><div class="field-label">Sprechstunden</div><textarea name="sprechstunden" oninput="trackChange()"></textarea></div></div></div>
+  <div class="card"><div class="card-header"><h2>Facharzttitel &amp; Zusatzbezeichnungen</h2></div><div class="check-grid"><label class="check-item"><input type="checkbox" name="Facharzt für Innere Medizin mit Schwerpunkt Gastroenterologie" checked onchange="trackChange()"><span class="check-label">Facharzt für Innere Medizin mit Schwerpunkt Gastroenterologie</span></label><label class="check-item"><input type="checkbox" name="Facharzt für Innere Medizin"  onchange="trackChange()"><span class="check-label">Facharzt für Innere Medizin</span></label><label class="check-item"><input type="checkbox" name="Facharzt für Innere Medizin mit SP Hämato-Onkologi"  onchange="trackChange()"><span class="check-label">Facharzt für Innere Medizin mit SP Hämato-Onkologi</span></label><label class="check-item"><input type="checkbox" name="Chirurg"  onchange="trackChange()"><span class="check-label">Chirurg</span></label><label class="check-item"><input type="checkbox" name="Kardiologie"  onchange="trackChange()"><span class="check-label">Kardiologie</span></label><label class="check-item"><input type="checkbox" name="Nephrologie"  onchange="trackChange()"><span class="check-label">Nephrologie</span></label><label class="check-item"><input type="checkbox" name="Rheumatologie"  onchange="trackChange()"><span class="check-label">Rheumatologie</span></label><label class="check-item"><input type="checkbox" name="Endokrinologie"  onchange="trackChange()"><span class="check-label">Endokrinologie</span></label><label class="check-item"><input type="checkbox" name="Pneumologie"  onchange="trackChange()"><span class="check-label">Pneumologie</span></label><label class="check-item"><input type="checkbox" name="Notfallmedizin"  onchange="trackChange()"><span class="check-label">Notfallmedizin</span></label><label class="check-item"><input type="checkbox" name="Sportmedizin"  onchange="trackChange()"><span class="check-label">Sportmedizin</span></label><label class="check-item"><input type="checkbox" name="Infektiologie"  onchange="trackChange()"><span class="check-label">Infektiologie</span></label><label class="check-item"><input type="checkbox" name="Diabetologie"  onchange="trackChange()"><span class="check-label">Diabetologie</span></label><label class="check-item"><input type="checkbox" name="Tauchmedizin"  onchange="trackChange()"><span class="check-label">Tauchmedizin</span></label><label class="check-item"><input type="checkbox" name="Ernährungsmedizin"  onchange="trackChange()"><span class="check-label">Ernährungsmedizin</span></label><label class="check-item"><input type="checkbox" name="Hepatologie"  onchange="trackChange()"><span class="check-label">Hepatologie</span></label><label class="check-item"><input type="checkbox" name="Onkologische Gastroenterologie"  onchange="trackChange()"><span class="check-label">Onkologische Gastroenterologie</span></label><label class="check-item"><input type="checkbox" name="Proktologie"  onchange="trackChange()"><span class="check-label">Proktologie</span></label><label class="check-item"><input type="checkbox" name="Suchtmedizin"  onchange="trackChange()"><span class="check-label">Suchtmedizin</span></label><label class="check-item"><input type="checkbox" name="Palliativmedizin"  onchange="trackChange()"><span class="check-label">Palliativmedizin</span></label><label class="check-item"><input type="checkbox" name="Medikamentöse Tumortherapie"  onchange="trackChange()"><span class="check-label">Medikamentöse Tumortherapie</span></label><label class="check-item"><input type="checkbox" name="Sonographie"  onchange="trackChange()"><span class="check-label">Sonographie</span></label><label class="check-item"><input type="checkbox" name="Betriebsmedizin"  onchange="trackChange()"><span class="check-label">Betriebsmedizin</span></label><label class="check-item"><input type="checkbox" name="Intensivmedizin"  onchange="trackChange()"><span class="check-label">Intensivmedizin</span></label><label class="check-item"><input type="checkbox" name="Naturheilverfahren"  onchange="trackChange()"><span class="check-label">Naturheilverfahren</span></label><label class="check-item"><input type="checkbox" name="Reisemedizin"  onchange="trackChange()"><span class="check-label">Reisemedizin</span></label><label class="check-item"><input type="checkbox" name="Labormedizin"  onchange="trackChange()"><span class="check-label">Labormedizin</span></label><label class="check-item"><input type="checkbox" name="Pneumologie_1"  onchange="trackChange()"><span class="check-label">Pneumologie (weitere)</span></label><label class="check-item"><input type="checkbox" name="Rettungsmedizin"  onchange="trackChange()"><span class="check-label">Rettungsmedizin</span></label><label class="check-item"><input type="checkbox" name="Internistische Röntgendiagnostik"  onchange="trackChange()"><span class="check-label">Internistische Röntgendiagnostik</span></label></div></div><div class="card"><div class="card-header"><h2>Praxisschwerpunkte</h2></div><div class="check-grid"><label class="check-item"><input type="checkbox" name="Hepatologische Schwerpunktpraxis"  onchange="trackChange()"><span class="check-label">Hepatologische Schwerpunktpraxis</span></label><label class="check-item"><input type="checkbox" name="CED-Schwerpunktpraxis"  onchange="trackChange()"><span class="check-label">CED-Schwerpunktpraxis</span></label><label class="check-item"><input type="checkbox" name="Schwerpunktpraxis Kapselendoskopie"  onchange="trackChange()"><span class="check-label">Schwerpunktpraxis Kapselendoskopie</span></label></div></div><div class="card"><div class="card-header"><h2>Leistungen &amp; Untersuchungen</h2></div><div class="check-grid"><label class="check-item"><input type="checkbox" name="Doppelballonendoskopie"  onchange="trackChange()"><span class="check-label">Doppelballonendoskopie</span></label><label class="check-item"><input type="checkbox" name="Enddarmuntersuchungen"  onchange="trackChange()"><span class="check-label">Enddarmuntersuchungen</span></label><label class="check-item"><input type="checkbox" name="ERCP"  onchange="trackChange()"><span class="check-label">ERCP</span></label><label class="check-item"><input type="checkbox" name="Leberuntersuchungen"  onchange="trackChange()"><span class="check-label">Leberuntersuchungen</span></label><label class="check-item"><input type="checkbox" name="Gastroskopie" checked onchange="trackChange()"><span class="check-label">Gastroskopie</span></label><label class="check-item"><input type="checkbox" name="Koloskopie" checked onchange="trackChange()"><span class="check-label">Koloskopie</span></label><label class="check-item"><input type="checkbox" name="Vorsorgekoloskopie" checked onchange="trackChange()"><span class="check-label">Vorsorgekoloskopie</span></label><label class="check-item"><input type="checkbox" name="Videokapselendoskopie"  onchange="trackChange()"><span class="check-label">Videokapselendoskopie</span></label><label class="check-item"><input type="checkbox" name="Ultraschall-Diagnostik" checked onchange="trackChange()"><span class="check-label">Ultraschall-Diagnostik</span></label><label class="check-item"><input type="checkbox" name="übernehme Praxisvertretung"  onchange="trackChange()"><span class="check-label">übernehme Praxisvertretung</span></label></div></div><div class="card"><div class="card-header"><h2>Verbandsmitgliedschaften</h2></div><div class="check-grid"><label class="check-item"><input type="checkbox" name="BDI" checked onchange="trackChange()"><span class="check-label">BDI</span></label><label class="check-item"><input type="checkbox" name="DGVS" checked onchange="trackChange()"><span class="check-label">DGVS</span></label><label class="check-item"><input type="checkbox" name="Degum"  onchange="trackChange()"><span class="check-label">Degum</span></label><label class="check-item"><input type="checkbox" name="DAGNAE"  onchange="trackChange()"><span class="check-label">DAGNAE</span></label><label class="check-item"><input type="checkbox" name="Deutsche Leberstiftung"  onchange="trackChange()"><span class="check-label">Deutsche Leberstiftung</span></label><label class="check-item"><input type="checkbox" name="DGE-BV"  onchange="trackChange()"><span class="check-label">DGE-BV</span></label><label class="check-item"><input type="checkbox" name="DGIM"  onchange="trackChange()"><span class="check-label">DGIM</span></label><label class="check-item"><input type="checkbox" name="EASL"  onchange="trackChange()"><span class="check-label">EASL</span></label><label class="check-item"><input type="checkbox" name="Hep-Net"  onchange="trackChange()"><span class="check-label">Hep-Net</span></label><label class="check-item"><input type="checkbox" name="MEDI"  onchange="trackChange()"><span class="check-label">MEDI</span></label><label class="check-item"><input type="checkbox" name="Kompetenz-Netz CED" checked onchange="trackChange()"><span class="check-label">Kompetenz-Netz CED</span></label></div></div>
+  <div class="card"><div class="card-header"><h2>Weiterbildung &amp; Ausbildung</h2></div><div class="wb-grid"><div class="wb-col"><label class="check-item"><input type="checkbox" name="WB Gastroenterologie"  onchange="trackChange()"><span class="check-label">WB Gastroenterologie</span></label><label class="check-item"><input type="checkbox" name="WB Innere Medizin"  onchange="trackChange()"><span class="check-label">WB Innere Medizin</span></label><label class="check-item"><input type="checkbox" name="WB Proktologie"  onchange="trackChange()"><span class="check-label">WB Proktologie</span></label></div><div class="wb-col wb-col-right"><label class="check-item"><input type="checkbox" name="Sonstige Weiterbildungsbefugnis"  onchange="trackChange()"><span class="check-label">Sonstige Weiterbildungsbefugnis</span></label><label class="check-item"><input type="checkbox" name="MFA-Ausbildungspraxis"  onchange="trackChange()"><span class="check-label">MFA-Ausbildungspraxis</span></label><label class="check-item"><input type="checkbox" name="Hospitation möglich"  onchange="trackChange()"><span class="check-label">Hospitation möglich</span></label></div></div></div>
+  <div class="submit-card">
+    <h2>Daten absenden</h2>
+    <p>Klicken Sie auf „Änderungen senden“, wenn Sie Korrekturen vorgenommen haben. Falls alle Daten stimmen, klicken Sie auf „Alles korrekt“.</p>
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="sendChanges()">✉ Änderungen senden</button>
+      <button class="btn btn-secondary" id="btn-ok" onclick="sendOk()">✓ Alles korrekt</button>
+    </div>
+  </div>
+</main>
+<footer>bng e.V. · Berufsverband Niedergelassener Gastroenterologen Deutschlands · magen-darm-aerzte.de<br>
+Dieser Link ist personalisiert. Bitte nicht weiterleiten.</footer>
+<script>
+var ORIGINAL = {"nr": 10340, "anrede": "Herr", "akademisch": "PD Dr. med.", "vorname": "Gerhard", "nachname": "Heptner", "strasse": "Lukasstraße 3", "plz": "1069", "ort": "Dresden", "telefon": "0351-436120", "telefax": "0351-4361220", "email": "gerhard.heptner@t-online.de", "webseite": "", "behandlungsmethoden": "", "sprechstunden": "", "anrede_lang": "Sehr geehrter Herr PD Dr. Heptner", "Facharzt für Innere Medizin mit Schwerpunkt Gastroenterologie": true, "Facharzt für Innere Medizin": false, "Facharzt für Innere Medizin mit SP Hämato-Onkologi": false, "Chirurg": false, "Kardiologie": false, "Nephrologie": false, "Rheumatologie": false, "Endokrinologie": false, "Pneumologie": false, "Notfallmedizin": false, "Sportmedizin": false, "Infektiologie": false, "Diabetologie": false, "Tauchmedizin": false, "Ernährungsmedizin": false, "Hepatologie": false, "Onkologische Gastroenterologie": false, "Proktologie": false, "Suchtmedizin": false, "Palliativmedizin": false, "Medikamentöse Tumortherapie": false, "Sonographie": false, "Betriebsmedizin": false, "Intensivmedizin": false, "Naturheilverfahren": false, "Reisemedizin": false, "Labormedizin": false, "Pneumologie_1": false, "Rettungsmedizin": false, "Internistische Röntgendiagnostik": false, "Hepatologische Schwerpunktpraxis": false, "CED-Schwerpunktpraxis": false, "Schwerpunktpraxis Kapselendoskopie": false, "Doppelballonendoskopie": false, "Enddarmuntersuchungen": false, "ERCP": false, "Leberuntersuchungen": false, "Gastroskopie": true, "Koloskopie": true, "Vorsorgekoloskopie": true, "Videokapselendoskopie": false, "Ultraschall-Diagnostik": true, "übernehme Praxisvertretung": false, "BDI": true, "DGVS": true, "Degum": false, "DAGNAE": false, "Deutsche Leberstiftung": false, "DGE-BV": false, "DGIM": false, "EASL": false, "Hep-Net": false, "MEDI": false, "Kompetenz-Netz CED": true, "WB Gastroenterologie": false, "WB Innere Medizin": false, "WB Proktologie": false, "Sonstige Weiterbildungsbefugnis": false, "MFA-Ausbildungspraxis": false, "Hospitation möglich": false};
+var GS_EMAIL = 'kontakt@bng-gastro.de';
+var TEXT_FIELDS = {"anrede": "Anrede", "akademisch": "Akademischer Titel", "vorname": "Vorname", "nachname": "Nachname", "email": "E-Mail", "webseite": "Webseite", "strasse": "Straße", "plz": "PLZ", "ort": "Ort", "telefon": "Telefon", "telefax": "Telefax", "behandlungsmethoden": "Behandlungsmethoden", "sprechstunden": "Sprechstunden"};
+var changed = false;
+
+function trackChange() {
+  if (!changed) {
+    changed = true;
+    document.getElementById('changed-bar').classList.add('visible');
+    document.getElementById('btn-ok').classList.add('hidden');
+  }
+}
+
+function collectData() {
+  var data = {};
+  document.querySelectorAll('input[type=text], textarea').forEach(function(el) { data[el.name] = el.value.trim(); });
+  document.querySelectorAll('input[type=checkbox]').forEach(function(el) { data[el.name] = el.checked; });
+  return data;
+}
+
+function diffLines(current) {
+  var lines = [];
+  var keys = Object.keys(TEXT_FIELDS);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i]; var label = TEXT_FIELDS[key];
+    var orig = String(ORIGINAL[key] || ''); var curr = String(current[key] || '');
+    if (orig !== curr) lines.push(label + ': "' + orig + '" \u2192 "' + curr + '"');
+  }
+  var cbKeys = Object.keys(current);
+  for (var j = 0; j < cbKeys.length; j++) {
+    var k = cbKeys[j];
+    if (typeof current[k] === 'boolean') {
+      var origVal = !!ORIGINAL[k];
+      if (origVal !== current[k]) {
+        var lbl = k === 'Pneumologie_1' ? 'Pneumologie (weitere)' : k;
+        lines.push(lbl + ': ' + (origVal ? 'Ja' : 'Nein') + ' \u2192 ' + (current[k] ? 'Ja' : 'Nein'));
+      }
+    }
+  }
+  return lines;
+}
+
+function buildName() {
+  return [ORIGINAL.akademisch, ORIGINAL.vorname, ORIGINAL.nachname].filter(Boolean).join(' ');
+}
+
+function sendChanges() {
+  var current = collectData(); var diffs = diffLines(current);
+  var nr = ORIGINAL.nr; var name = buildName(); var bodyText;
+  if (diffs.length === 0) {
+    bodyText = 'Sehr geehrtes Team,\n\nich habe meine Daten gepr\u00FCft und keine \u00C4nderungen festgestellt. Alle gespeicherten Angaben sind korrekt.\n\nMit freundlichen Gr\u00FC\u00DFen\n' + name + '\n(Mitglied Nr. ' + nr + ')';
+  } else {
+    bodyText = 'Sehr geehrtes Team,\n\nbitte aktualisieren Sie meine Praxisdaten wie folgt:\n\n' + diffs.join('\n') + '\n\nMit freundlichen Gr\u00FC\u00DFen\n' + name + '\n(Mitglied Nr. ' + nr + ')';
+  }
+  var subject = encodeURIComponent('Datenaktualisierung Mitglied Nr. ' + nr + ' \u2013 ' + name);
+  window.location.href = 'mailto:' + GS_EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(bodyText);
+}
+
+function sendOk() {
+  var nr = ORIGINAL.nr; var name = buildName();
+  var subject = encodeURIComponent('Datenbest\u00E4tigung Mitglied Nr. ' + nr + ' \u2013 ' + name);
+  var bodyText = 'Sehr geehrtes Team,\n\nich habe meine Praxisdaten gepr\u00FCft. Alle Angaben sind korrekt und aktuell. Es gibt keine \u00C4nderungen.\n\nMit freundlichen Gr\u00FC\u00DFen\n' + name + '\n(Mitglied Nr. ' + nr + ')';
+  window.location.href = 'mailto:' + GS_EMAIL + '?subject=' + subject + '&body=' + encodeURIComponent(bodyText);
+}
+</script>
+</body>
+</html>
